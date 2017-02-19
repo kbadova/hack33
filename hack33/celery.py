@@ -15,7 +15,7 @@ app = Celery('hack33')
 
 
 class CeleryConfig(AppConfig):
-    name = 'hack33.taskapp'
+    name = 'hack33'
     verbose_name = 'Celery Config'
 
     def ready(self):
@@ -24,10 +24,6 @@ class CeleryConfig(AppConfig):
         app.config_from_object('django.conf:settings')
         installed_apps = [app_config.name for app_config in apps.get_app_configs()]
         app.autodiscover_tasks(lambda: installed_apps, force=True)
-
-        
-
-        
 
 
 @app.task(bind=True)

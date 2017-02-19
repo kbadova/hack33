@@ -1,1 +1,7 @@
 {% extends "base.html" %}
+{% load celery_tags %}
+{% block content %}
+
+<p>{% display_different_messages_with_celery %}</p>
+
+{% endblock %}
