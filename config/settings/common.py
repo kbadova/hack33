@@ -256,14 +256,6 @@ BROKER_URL = env('CELERY_BROKER_URL', default='amqp://guest:guest@localhost//')
 
 CELERY_TIMEZONE = 'UTC'
 
-CELERYBEAT_SCHEDULE = {
-    'run-every-5-seconds': {
-        'task': 'hack33.templatetags.celery_tags.display_time',
-        'schedule': timedelta(seconds=5),
-        'args': (16, 16)
-    },
-}
-
 
 # Location of root django.contrib.admin URL, use {% url 'admin:index' %}
 ADMIN_URL = r'^admin/'
