@@ -51,10 +51,6 @@ if os.environ.get('USE_DOCKER') == 'yes':
     INTERNAL_IPS += [ip[:-1] + "1"]
 
 
-# django-extensions
-# ------------------------------------------------------------------------------
-INSTALLED_APPS += ('django_extensions', )
-
 # TESTING
 # ------------------------------------------------------------------------------
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
