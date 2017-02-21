@@ -11,7 +11,7 @@ if not settings.configured:
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings.local')  # pragma: no cover
 
 
-app = Celery('hack33')
+app = Celery('hack33', broker='amqp://guest@localhost//', backend='amqp')
 
 
 class CeleryConfig(AppConfig):
